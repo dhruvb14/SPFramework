@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+
+  <title>Site Creation Bundle.js Unit Test</title>
+ 
+
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.1.1.css">
+  <link rel="stylesheet" href="/sites/CSOM/bundle.css">
+  <link rel="stylesheet" href="/SharePointFixes/global.css">
+
+  <script src="https://code.jquery.com/qunit/qunit-2.1.1.js"></script>
+  <script src="/SharePointFixes/global.js"></script>
+</head>
+
+<body>
+
+  <div id="qunit"></div>
+
+  <div id="qunit-fixture">
+    <div id="handlebarsTemplates"></div>
+
+  </div>
+  <div class="hiddenWidgets">
+    <div data-controller="siteCreation"></div>
+  </div>
+</body>
+ <script src="/sites/CSOM/vendor.js"></script>
+  <script src="/sites/CSOM/init.js"></script>
+<script src="/vendor/jquery.mockjax.js"></script>
+<script src="/mockDataRepository.js"></script>
+<script src="/mockApi.js"></script>
+
+<script src="/sites/CSOM/bundle.js"></script>
+
+
+
+<!--<script src="prettydate.js"></script>-->
+<script src="tests.js"></script>
+
+
+</html>

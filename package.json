@@ -1,0 +1,42 @@
+{
+  "name": "contososharepoint",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "@types/flexslider": "^2.0.28",
+    "@types/handlebars": "^4.0.31",
+    "@types/jquery": "^2.0.34",
+    "@types/owlcarousel": "0.0.28",
+    "@types/sharepoint": "^2013.0.31",
+    "fs": "^0.0.2",
+    "gulp": "^3.9.1",
+    "jsdom": "^9.1.0",
+    "vm": "^0.1.0"
+  },
+  "devDependencies": {
+    "graceful-fs": "^4.1.4",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-msbuild": "^0.3.3",
+    "gulp-notify": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^3.1.2",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7",
+    "typescript": "^2.0.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dhruv Bhavsar",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhruvb14/SharePointVSCode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dhruvb14/SharePointVSCode/issues"
+  },
+  "homepage": "https://github.com/dhruvb14/SharePointVSCode#readme",
+  "description": ""
+}

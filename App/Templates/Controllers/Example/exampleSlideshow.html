@@ -1,0 +1,12 @@
+<script id="exampleSlideShowTemplate" type="text/x-handlebars-template">
+<div class="flexslider">
+  <ul class="slides">
+    {{#each slides}}
+    <li>
+      <img src="{{image}}" />
+      <p class="flex-caption">{{title}}</p>
+    </li>
+    {{/each}}
+  </ul>
+</div>
+</script>

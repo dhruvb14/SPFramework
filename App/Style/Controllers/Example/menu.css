@@ -1,0 +1,27 @@
+/* Hover effect for nav bar */
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
+    position: relative;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item:hover:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: -1px;
+    display: block;
+    height: 5px;
+    background: #fff;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="SPFrameworkDemo"]:hover:after {
+    background: #871308;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="Home"]:hover:after {
+    background: #FFF000;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="Demo-3"]:hover:after {
+    background: #6AB0D7;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="Demo-4"]:hover:after {
+    background: #1B80E2;
+}

@@ -1,0 +1,10 @@
+﻿<script id="exampleListGroupTemplate" type="text/x-handlebars-template">
+    <div class="list-group">
+        {{#each listItem}}
+        <a href="#" class="list-group-item {{#if @first}}active{{/if}}">
+            <h4 class="list-group-item-heading">{{title}}</h4>
+            <p class="list-group-item-text">...</p>
+        </a>
+        {{/each}}
+    </div>
+</script>

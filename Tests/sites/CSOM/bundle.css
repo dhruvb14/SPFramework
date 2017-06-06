@@ -1,0 +1,494 @@
+/* Hide unnecessary page elements */
+.ms-siteicon-img,  /* Image set as SharePoint site logo in Settings */
+#suiteBarLeft,  /*Suite Bar Left (SharePoint text and links) */
+#ms-help,  /* Help icon  */
+#fullscreenmodebox,  /* Focus on Content icon */
+.right-wp-zone-col,  /* Content area - right column */
+.ms-core-listMenu-horizontalBox .ms-listMenu-editLink,  /* Global navigation "Edit Links" when managed navigation is in use */
+.ms-core-listMenu-verticalBox .ms-listMenu-editLink  /* Current navigation "Edit Links" when managed navigation is in use */ {
+    display: none;
+}
+ 
+#RibbonContainer-TabRowRight /* Share, Follow, Edit links */ {
+    display: none !important; /* !important needed to override SharePoint inline style */
+}
+/* Web page background */
+body {
+    background:#eeeeee;
+}
+#s4-workspace {
+    background: url("/CSOM/background.jpg") no-repeat center -1px;
+}
+ 
+/* Remove OOTB shading on s4-workspace */
+.ms-core-overlay {
+    background-color: transparent;
+}
+ 
+/* Page content area */
+#contentBox {
+    margin: 15px auto 0; /* Top margin creates space between header area and content area; left/right margin centers element on page */
+    /*background: #131517;*/
+    width: 956px;  /* Fixed width value (976px) minus padding value */
+    padding: 10px;
+}
+.col-fluid-1,
+.col-fluid-2 {
+    float: none;
+    margin-right: 0;
+}
+/* Reduce height of area to minimum required */
+#suiteBar {
+    height: auto;
+}
+ 
+/* Ribbon background and border */
+.ms-cui-topBar2 {
+    background: #000;
+    border-bottom: 1px solid #666;
+}
+.ms-cui-topBar2,
+.ms-cui-topBar2.ms-browseTabContainer {
+    border-bottom: 1px solid #666;
+} 
+ 
+/* Move Suite Bar Right (Sign In/Welcome/Site Actions/Help) back to right side after hiding Suite Bar Left */
+#suiteBarRight {
+    position: absolute; /* Remove from content flow and create precise placement based on parent container */
+    right: 0;  /* Position from right */
+    background: transparent;  /* Remove OOTB background */
+    top: 0;
+    z-index: 2;
+}
+/* Undo the crazy that SharePoint creates with table display set to DIVs*/
+#s4-titlerow .ms-table,
+#s4-titlerow .ms-tableRow,
+#s4-titlerow .ms-tableCell {
+    display: block;
+}
+ 
+/* Wrapper around site logo wrapper */
+#titleAreaBox {
+    margin: 0;  /* Remove OOTB margin */
+}
+ 
+/* Site logo wrapper */
+#siteIcon {
+    float: none;  /* Remove OOTB float - this allows title row elements to return to typical block elements along with the table display changes above */
+    text-align: left;  /* Alter OOTB alignment */
+    margin-top: 55px;
+    position: absolute;
+    left: 50%;
+    margin-left: -565px;
+} 
+ 
+/* Add new logo image */
+.ms-siteicon-a {
+    background: url('/spframework/SiteAssets/microsoftLogo.png') no-repeat right; /* Logo image */
+    width: 173px; /* Width of logo image */
+    max-width: 173px; /* Duplicate the width value */
+    height: 56px; /* Height of logo image */
+    max-height: 56px; /* Duplicate the height value */
+    background-position: center; 
+    background-size:cover;
+    background-size: 100% 100%;
+}
+ 
+/* Page title text */
+#pageTitle {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -375px;
+    font-family: 'Gill Sans MT', Arial, sans-serif;
+    font-size: 52px;
+    color: dimgrey;
+    font-weight: normal;
+}
+/* Top nav bar placement & formatting */
+.ms-breadcrumb-top > .ms-core-navigation {
+    background: #000;
+    display: block;
+    height: 41px;
+    position: absolute;
+    top:0;
+    width: 100%;
+    border-bottom: #666 1px solid;
+    text-align: center;
+}
+.ms-core-listMenu-horizontalBox {
+    margin-left: 0px;
+}
+ 
+/* Nav item text formatting */
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
+    height: 16px;
+    color: white;
+    font-family: Arial, Helvetica, freesans, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 0;
+    padding: 20px 15px;
+    border-right: #666 1px solid;
+}
+ 
+/* Search box placement */
+.ms-mpSearchBox.ms-floatRight {
+    float: none;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    margin-left: 228px;
+}
+ 
+/* Search background */
+.ms-srch-sb {
+    background: #fff;
+}
+ 
+/* Remove default border */
+.ms-srch-sb-border,
+.ms-srch-sb-border:hover {
+    border-color: transparent;
+}
+ 
+/* Modify default formatting for input */
+.ms-srch-sb input {
+    width: 170px;
+    color: black;
+    font-family: Arial, Helvetica, freesans, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+/* Quick Launch placement & formatting */
+#sideNavBox {
+    float: none;
+    width: 976px;
+    height: 44px;
+    margin: 10px auto 0;
+    background: rgba(66, 55, 55, 0.8);
+    visibility:hidden;
+}
+.ms-core-sideNavBox-removeLeftMargin {
+    margin-left: 0;
+}
+ 
+/* Convert to horizontal nav bar */
+.ms-core-listMenu-verticalBox ul li {
+    float: left;
+}
+ 
+/* Nav item text formatting */
+#s4-workspace .ms-core-listMenu-verticalBox ul li a {
+    font-family: Arial, Helvetica, freesans, sans-serif;
+    font-size: 16px;
+    height: 20px;
+    padding: 12px 15px;
+    color: rgb(214, 211, 175);
+}
+ 
+/* Nav item selected and hover effect */
+#s4-workspace .ms-core-listMenu-verticalBox ul li.selected > a,
+#s4-workspace .ms-core-listMenu-verticalBox ul li a:hover {
+    background: rgba(31, 26, 26,.3);
+    color: #fff;
+}
+ 
+/* Hide "Site Contents" link */
+#s4-workspace .ms-core-listMenu-verticalBox > a {
+    display: none;
+}
+/* Add BBC logo before navigation */
+.ms-core-listMenu-horizontalBox:before {
+    /*content: "";*/
+    /*position: absolute;*/
+    /*margin-left: -260px;*/
+    /*top: 0;*/
+    /*background: url("/CSOM/microsoftlogo.gif") no-repeat 0 8px;*/
+    /*display: block;*/
+    /*width: 94px;*/
+    /*height: 41px;*/
+    /*border-right: #666 1px solid;*/
+    /*background-size: 100% 70%;*/
+    /*background-position: center;*/ 
+}
+/* Font Awesome is a free font. http://fontawesome.io/  */
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
+ 
+.ms-core-listMenu-horizontalBox > ul > li.static:first-child > .ms-core-listMenu-item {
+    border-left: #666 1px solid;
+}
+ 
+/* Remove default image and formatting for dynamic menu drop downs */
+.ms-core-listMenu-horizontalBox .dynamic-children.additional-background {
+    padding-right: 0;
+    background: none;
+}
+ 
+/* Insert new icon for dynamic menu drop downs */
+.ms-core-listMenu-horizontalBox .dynamic-children.additional-background:after {
+    content: "\f0d7";
+    font-family: FontAwesome;
+    padding-left: 10px;
+    font-size: .7em;
+}
+ 
+/* Correct text alignment of dynamic pop up menu nav items */
+.ms-core-listMenu-verticalBox .ms-core-listMenu-item, ul.dynamic .ms-core-listMenu-item {
+    text-align: left;
+}
+ 
+/* Adjust placement of dynamic pop up menu */
+ul.dynamic {
+    margin-top: 7px;
+    margin-left: -5px;
+}
+
+/* Hide default Search icon */
+.ms-srch-sb-searchImg {
+    display: none;
+}
+ 
+/* Insert new search icon */
+.ms-srch-sb-searchLink:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 1rem;
+    display: inline-block;
+    padding: 1px;
+    color: #2F373F;
+}
+
+/* Hover effect for nav bar */
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
+    position: relative;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item:hover:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: -1px;
+    display: block;
+    height: 5px;
+    background: #fff;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="SPFrameworkDemo"]:hover:after {
+    background: #871308;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="Home"]:hover:after {
+    background: #FFF000;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="Demo-3"]:hover:after {
+    background: #6AB0D7;
+}
+.ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item[href*="Demo-4"]:hover:after {
+    background: #1B80E2;
+}
+/*Fix Left Column Padding and Size*/
+#DeltaPlaceHolderMain > div.welcome.blank-wp > div.ms-table.ms-fullWidth > div.tableCol-75 > div:nth-child(3) > div:nth-child(1) {
+    padding-right:10px;
+    max-width: 300px;
+}
+/*Fix Center Column Padding and Size*/
+#DeltaPlaceHolderMain > div.welcome.blank-wp > div.ms-table.ms-fullWidth > div.tableCol-75 > div:nth-child(3) > div:nth-child(2) {
+    padding-left:10px;
+    padding-right:10px;
+    max-width: 600px;
+}
+/*Fix Right Column Padding and Size*/
+#DeltaPlaceHolderMain > div.welcome.blank-wp > div.ms-table.ms-fullWidth > div.tableCol-75 > div:nth-child(3) > div:nth-child(3) {
+    padding-left:10px;
+    min-width: 300px;
+}
+/*Fix SharePoint Online Centering Issue*/
+#contentBox{
+    margin: 15px auto 0;
+    width: 956px;
+    padding: 10px 20px 10px 0px;
+}
+/*
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif; }
+
+.logo-cont {
+  text-align: center; }
+
+.logo {
+  width: 150px;
+  border: 0px; }
+
+.content {
+  width: 600px;
+  margin: 0px auto; }
+#s4-titlerow,
+#contentRow {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
+  #s4-titlerow:after,
+  #contentRow:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+#titleAreaBox {
+  clear: both;
+  width: 98.3333333333%;
+  float: left;
+  margin-left: 0.8333333333%;
+  margin-right: 0.8333333333%; }
+
+#sideNavBox {
+  width: 18.3333333333%;
+  float: left;
+  margin-left: 0.8333333333%;
+  margin-right: 0.8333333333%;
+  display: none; }
+
+#contentBox {
+  min-width: 0px;
+  width: 78.3333333333%;
+  float: left;
+  margin-left: 0.8333333333%;
+  margin-right: 0.8333333333%;
+  margin: 0px; }
+
+.ms-core-listMenu-horizontalBox {
+  border: 1px lime solid; }
+  .ms-core-listMenu-horizontalBox::before {
+    content: "Menu";
+    color: #dd314d;
+    display: inline-block;
+    font-family: office365icons, o365Icons;
+    content: "\e020  Menu";
+    font-size: 1.5em;
+    padding: 0.2em; }
+  .ms-core-listMenu-horizontalBox .ms-core-listMenu-root {
+    display: none; }
+  .ms-core-listMenu-horizontalBox:hover::before, .ms-core-listMenu-horizontalBox:focus::before,
+  .ms-core-listMenu-horizontalBox .showBurger::before {
+    background-color: #dd314d;
+    color: white; }
+  .ms-core-listMenu-horizontalBox:hover .ms-core-listMenu-root, .ms-core-listMenu-horizontalBox:focus .ms-core-listMenu-root,
+  .ms-core-listMenu-horizontalBox .showBurger .ms-core-listMenu-root {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    display: block;
+    background-color: #dd314d;
+    color: white;
+    padding: 0.35em; }
+    .ms-core-listMenu-horizontalBox:hover .ms-core-listMenu-root .static, .ms-core-listMenu-horizontalBox:focus .ms-core-listMenu-root .static,
+    .ms-core-listMenu-horizontalBox .showBurger .ms-core-listMenu-root .static {
+      display: block;
+      line-height: 1.25em;
+      padding: 0.25em 0.5em; }
+    .ms-core-listMenu-horizontalBox:hover .ms-core-listMenu-root .menu-item, .ms-core-listMenu-horizontalBox:focus .ms-core-listMenu-root .menu-item,
+    .ms-core-listMenu-horizontalBox .showBurger .ms-core-listMenu-root .menu-item {
+      display: block;
+      color: white;
+      margin: 0px; }
+      .ms-core-listMenu-horizontalBox:hover .ms-core-listMenu-root .menu-item:hover, .ms-core-listMenu-horizontalBox:focus .ms-core-listMenu-root .menu-item:hover,
+      .ms-core-listMenu-horizontalBox .showBurger .ms-core-listMenu-root .menu-item:hover {
+        background-color: #ee9105; }
+  .ms-core-listMenu-horizontalBox:hover .static.ms-navedit-editArea, .ms-core-listMenu-horizontalBox:focus .static.ms-navedit-editArea,
+  .ms-core-listMenu-horizontalBox .showBurger .static.ms-navedit-editArea {
+    display: none; }
+
+li[id^='Ribbon.ContextualTabs.Media.Options.Size'] {
+  display: none; }
+
+.mediaPlayerContainer video {
+  max-width: 100%;
+  width: 100%;
+  height: auto; }
+
+figure {
+  margin: 0em;
+  border: 1px silver solid;
+  padding: 1em;
+  max-width: 720px;
+  border-radius: 0.5em; }
+  figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.25em; }
+
+figcaption {
+  line-height: 1em;
+  padding: 0.5em 0 0;
+  font-style: italic;
+  font-size: 1.25em; }
+
+@media only screen and (min-width: 0) and (max-width: 480) {
+  #contentRow {
+    width: auto; }
+  #contentBox {
+    width: 98.3333333333%;
+    float: left; }
+  .ms-formtable {
+    box-sizing: border-box;
+    display: block;
+    min-width: 280px; }
+  .ms-formlabel {
+    display: block;
+    box-sizing: border-box;
+    width: 100%; }
+  .ms-formbody {
+    box-sizing: border-box;
+    display: block;
+    width: auto !important;
+    max-width: 280px;
+    padding: 0 0 0.5em 0; }
+    .ms-formbody tr {
+      display: block; }
+    .ms-formbody .ms-rtestate-field {
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 0px; }
+    .ms-formbody .sp-peoplepicker-topLevel {
+      width: auto; }
+    .ms-formbody input[type="radio"] {
+      width: 24px;
+      height: 24px; }
+    .ms-formbody .ms-long {
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 270px; } }*/
+[data-controller="exampleSlideShow"]  .flex-caption {
+      width: 100%;
+      padding: 2%;
+      left: 0;
+      bottom: 0;
+      background: rgba(0,0,0,.5);
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+      font-size: 14px;
+      line-height: 18px;
+    }
+[data-controller="exampleSlideShow"] li.css a {
+      border-radius: 0;
+    }
+[data-controller="exampleOwlDemo"] .owl-item {
+    height:200px;
+    width:200px;
+}
+[data-controller="exampleOwlDemo"] .person-caption {
+    width: 100%;
+    padding: 2%;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: bottom;
+}
+[data-controller="exampleOwlDemo"]{
+    max-width:600px;
+}
