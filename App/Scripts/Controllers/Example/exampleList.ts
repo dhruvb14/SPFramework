@@ -16,7 +16,7 @@ module Controllers {
             viewtemplate = viewtemplate ? viewtemplate : "exampleList";
             var vm = new exampleListVM();
             for (var i: number = 0; i < 10; i++) {
-                var tmpTitle: string = "Item number " + i;
+                var tmpTitle: string = "Item numbers " + i;
                 var item = new exampleListItem(tmpTitle);
                 vm.listItem.push(item);
             }

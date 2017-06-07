@@ -204,7 +204,7 @@ module Controllers {
                 "SBU_x0020_Community": Controllers.siteCreation.vm.SelectedTemplate.SBU == true ? "Yes" : "No",
                 "SiteURL": Controllers.siteCreation.vm.SelectedTemplate.URLPrefix + Controllers.siteCreation.vm.SelectedTemplate.URLSuffix,
                 "ContentTypeId": "0x0100B7235E8992FABB469447A05D2C9BE007",
-                "CategoryDescription": $("#sitedescription").text()
+                "CategoryDescription1": $("#sitedescription").text()
             };
             $.ajax({
                 url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('" + listName + "')/items",

@@ -25,12 +25,15 @@ module Contoso {
                 inject.onload = inject.onreadystatechange = function () {
                     if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
                         done = true;
+                        successCallback();
                         inject.onload = inject.onreadystatechange = null;
                         if (filetype == "js") { head.removeChild(inject); }
                     }
                 };
                 head.appendChild(inject);
             }
+            // successCallback();
+
         }
         domBuilder() {
             if (document.getElementById("handlebarsTemplates") === null) {
@@ -43,7 +46,11 @@ module Contoso {
         loadJs() {
             Contoso.init.getDependency(Contoso.init.rootSiteCollectionPrefix + '/CSOM/vendor.js', 'js', function () {
                 console.log("Successfully boostrapped Vendor JS");
-                Contoso.init.getDependency(Contoso.init.rootSiteCollectionPrefix + '/CSOM/bundle.js', 'js', function () {
+                Contoso.init.loadBundle();
+            });
+        }
+        loadBundle(){
+            Contoso.init.getDependency(Contoso.init.rootSiteCollectionPrefix + '/CSOM/bundle.js', 'js', function () {
                     if (typeof Controllers === 'undefined' || typeof Contoso.Helpers === 'undefined') {
                         if (console !== undefined) {
                             console.log('Failed to bootstrap CSOM JS');
@@ -52,19 +59,19 @@ module Contoso {
                         Contoso.Helpers.log('Successfully bootstraped CSOM JS');
                     }
                 });
-            });
         }
         loadCss() {
             Contoso.init.getDependency(Contoso.init.rootSiteCollectionPrefix + '/CSOM/bundle.css', 'css', function () {
-                Contoso.Helpers.log('Successfully bootstraped CSOM CSS');
+                console.log('Successfully bootstraped CSOM CSS');
             });
             Contoso.init.getDependency(Contoso.init.rootSiteCollectionPrefix + '/CSOM/vendor.css', 'css', function () {
-                Contoso.Helpers.log('Successfully bootstraped Vendor CSS');
+                console.log('Successfully bootstraped Vendor CSS');
             });
             Contoso.init.getDependency('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css', 'css', function () {
             });
         }
-        rootSiteCollectionPrefix = "/sites";
+        // rootSiteCollectionPrefix = "/sites";
+        rootSiteCollectionPrefix = "/spframework";
         dataAttributeTag = "data-controller";
     }
     export var init = new initController();
