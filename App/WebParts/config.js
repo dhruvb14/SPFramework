@@ -6,6 +6,13 @@
             "include": { "Contoso": false },
             "title": "Test webpart, Do not copy to production",
             "webpartConfig": { "data-testProperty": "testvalue", "class": "test" }
+        },
+        {
+            "controllerName": "Demo",
+            "description": "Hello World Controller",
+            "include": { "Contoso": false },
+            "title": "Hello World",
+            "webpartConfig": { }
         }
 ]
 var projects = [

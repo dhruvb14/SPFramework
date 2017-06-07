@@ -17,7 +17,7 @@ body {
     background:#eeeeee;
 }
 #s4-workspace {
-    /*background: url("/CSOM/background.jpg") no-repeat center -1px;*/
+    background: url("/CSOM/background.jpg") no-repeat center -1px;
 }
  
 /* Remove OOTB shading on s4-workspace */

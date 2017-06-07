@@ -6,6 +6,7 @@
     "./App/Templates/Controllers/Example/exampleSlideshow.html",
     "./App/Templates/Controllers/SiteCreation/siteCreation.html",
     "./App/Templates/Controllers/SiteCreation/siteCreationSuccess.html",
+    "./App/Templates/Controllers/_Starter/demo.html",
 ];
 
 var projects = [

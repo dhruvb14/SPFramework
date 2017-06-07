@@ -38,77 +38,89 @@
 </script>
 <script id="siteCreationTemplate" type="text/x-handlebars-template">
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="form-group" style="position: static;">
-            <label for="title">Title</label>
-            <input id="title" name="title" type="text" placeholder="XYZ Community" class="form-control">
-            <p class="help-block">Choose the name of the site to be created</p>
-        </div>
-        <div class="form-group" style="position: static;">
-            <label for="pnptemplate">Site Template</label>
-            <select id="pnptemplate" name="pnptemplate" class="form-control">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group" style="position: static;">
+                <label for="title">Title</label>
+                <input id="title" name="title" type="text" placeholder="XYZ Community" class="form-control">
+                <p class="help-block">Choose the name of the site to be created</p>
+            </div>
+            <div class="form-group" style="position: static;">
+                <label for="pnptemplate">Site Template</label>
+                <select id="pnptemplate" name="pnptemplate" class="form-control">
                 {{#each PnPTemplates}}
                     <option templateID="{{ID}}" description="{{CategoryDescription}}" portal="{{Portal}}" value="{{BaseUrl}}">{{Title}}</option>
                 {{/each}}
             </select>
-            <p id="pnptemplateDescription" class="help-block">{{CategoryDescription}}</p>
-        </div>
-        <div class="form-group" style="position: static;">
-            <label for="siteurl">Site URL </label>
-            <div class="input-group">
-                <span id="urlprefix" class="input-group-addon">{{PnPTemplates.0.BaseUrl}}</span>
-                <input id="siteurl" readonly name="siteurl" class="form-control" placeholder="" type="text">
+                <p id="pnptemplateDescription" class="help-block">{{CategoryDescription}}</p>
             </div>
-            <div class="alert alert-warning" role="alert" id="siteurlUnderscore">Site URL can not begin with an underscore. It has been removed.</div>
-            <p class="help-block">The URL you will be able to use see your site at after its created</p>
-        </div>
-        <div class="form-group" style="position: static;">
-            <label for="sitedescription">Site Description </label>
-            <textarea id="sitedescription" class="form-control" rows="3"></textarea>
-            <p class="help-block">A short description about your site</p>
-        </div>
-        <div class="form-group" id="SBU" style="position: static;">
-            <label for="SBURadios">SBU Community</label>
-            <div class="radio">
-                <label>
+            <div class="form-group" style="position: static;">
+                <label for="siteurl">Site URL </label>
+                <div class="input-group">
+                    <span id="urlprefix" class="input-group-addon">{{PnPTemplates.0.BaseUrl}}</span>
+                    <input id="siteurl" readonly name="siteurl" class="form-control" placeholder="" type="text">
+                </div>
+                <div class="alert alert-warning" role="alert" id="siteurlUnderscore">Site URL can not begin with an underscore. It has been removed.</div>
+                <p class="help-block">The URL you will be able to use see your site at after its created</p>
+            </div>
+            <div class="form-group" style="position: static;">
+                <label for="sitedescription">Site Description </label>
+                <textarea id="sitedescription" class="form-control" rows="3"></textarea>
+                <p class="help-block">A short description about your site</p>
+            </div>
+            <div class="form-group" id="SBU" style="position: static;">
+                <label for="SBURadios">SBU Community</label>
+                <div class="radio">
+                    <label>
                     <input type="radio" name="SBURadios" id="SBURadiosTrue" value="true">
                     Yes
                 </label>
-            </div>
-            <div class="radio">
-                <label>
+                </div>
+                <div class="radio">
+                    <label>
                     <input type="radio" name="SBURadios" id="SBURadiosFalse" value="false" checked>
                     No
                 </label>
+                </div>
             </div>
-        </div>
-        <div class="form-group" id="Restriction" style="position: static;">
-            <label for="RestrictionRadios">Community</label>
-            <div class="radio">
-                <label>
+            <div class="form-group" id="Restriction" style="position: static;">
+                <label for="RestrictionRadios">Community</label>
+                <div class="radio">
+                    <label>
                     <input type="radio" name="RestrictionRadios" id="RestrictionRadiosTrue" value="true">
                     Restricted
                 </label>
-            </div>
-            <div class="radio">
-                <label>
+                </div>
+                <div class="radio">
+                    <label>
                     <input type="radio" name="RestrictionRadios" id="RestrictionRadiosFalse" value="false" checked>
                     Unrestricted
                 </label>
+                </div>
+            </div>
+            <div class="form-group" style="padding-right: 20px; position: static;">
+                <p class="help-block">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere leo eu tortor tristique sagittis.
+                    id velit sed eleifend. In eget vestibulum eros. Maecenas gravida at dui et molestie. Donec eleifend dictum
+                    molestie. Pellentesque sodales tellus quis purus semper scelerisque. Nam sed neque tempus, pellentesque
+                    est eget, consequat odio. Proin ullamcorper, enim eget tincidunt tincidunt, eros elit pellentesque lectus,
+                    sed semper ex orci a turpis. Duis id lectus et est malesuada finibus. Donec nisi sem, semper et mi semper,
+                    pharetra porttitor diam. Fusce placerat varius tellus, at gravida felis vulputate et. Sed feugiat neque
+                    vitae nibh gravida euismod. Pellentesque quis sem nec odio rhoncus interdum ut sed nibh. Pellentesque
+                    habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla vitae justo magna.
+                    Vivamus dignissim nulla at elit accumsan, eget tristique dolor euismod. Nulla velit tortor, maximus at
+                    metus sed, ornare vulputate ipsum. Maecenas faucibus magna quis nibh pretium, ut sodales tellus sagittis.
+                    Pellentesque tincidunt tincidunt gravida. Nam ex nisl, consequat eu aliquam sed, dapibus pharetra ante.
+                    Aenean porttitor nisi sit amet arcu pretium ultricies. Vestibulum sodales aliquet malesuada. Nunc cursus
+                    libero quis tristique blandit. Nunc convallis nulla mauris, non cursus justo aliquet a. Maecenas nibh
+                    mi, iaculis at augue nec, feugiat dictum est. Curabitur justo mi, dignissim vel nunc ut, semper dignissim
+                    nisi. Vestibulum non rhoncus dui. Mauris vitae dapibus massa. Fusce quam mi, pellentesque ac faucibus
+                    eget, sagittis ut purus.
+                </p>
+                <button id="submit" type="button" class="btn btn-default">Submit</button>
             </div>
         </div>
-        <div class="form-group" style="padding-right: 20px; position: static;">
-		<p class="help-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum posuere leo eu tortor tristique sagittis. Nam pellentesque id velit sed eleifend. In eget vestibulum eros. Maecenas gravida at dui et molestie. Donec eleifend dictum molestie. Pellentesque sodales tellus quis purus semper scelerisque. Nam sed neque tempus, pellentesque est eget, consequat odio. Proin ullamcorper, enim eget tincidunt tincidunt, eros elit pellentesque lectus, sed semper ex orci a turpis.
-
-Duis id lectus et est malesuada finibus. Donec nisi sem, semper et mi semper, pharetra porttitor diam. Fusce placerat varius tellus, at gravida felis vulputate et. Sed feugiat neque vitae nibh gravida euismod. Pellentesque quis sem nec odio rhoncus interdum ut sed nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla vitae justo magna. Vivamus dignissim nulla at elit accumsan, eget tristique dolor euismod. Nulla velit tortor, maximus at metus sed, ornare vulputate ipsum. Maecenas faucibus magna quis nibh pretium, ut sodales tellus sagittis. Pellentesque tincidunt tincidunt gravida.
-
-Nam ex nisl, consequat eu aliquam sed, dapibus pharetra ante. Aenean porttitor nisi sit amet arcu pretium ultricies. Vestibulum sodales aliquet malesuada. Nunc cursus libero quis tristique blandit. Nunc convallis nulla mauris, non cursus justo aliquet a. Maecenas nibh mi, iaculis at augue nec, feugiat dictum est. Curabitur justo mi, dignissim vel nunc ut, semper dignissim nisi. Vestibulum non rhoncus dui. Mauris vitae dapibus massa. Fusce quam mi, pellentesque ac faucibus eget, sagittis ut purus.
-</p>
-            <button id="submit" type="button" class="btn btn-default">Submit</button>
-        </div>
     </div>
-</div>
 </script>
 <script id="siteCreationSuccessTemplate" type="text/x-handlebars-template">
 <div class="row">
@@ -116,4 +128,8 @@ Nam ex nisl, consequat eu aliquam sed, dapibus pharetra ante. Aenean porttitor n
         <h2>Successfully Submitted Site Request</h2>
     </div>
 </div>
+</script>
+<script id="Demo-template" type="text/x-handlebars-template">
+    <h1>{{title}}</h1>
+    <p>{{message}}</p>
 </script>

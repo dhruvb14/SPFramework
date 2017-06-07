@@ -67,7 +67,7 @@ module Contoso {
             Contoso.init.getDependency(Contoso.init.rootSiteCollectionPrefix + '/CSOM/vendor.css', 'css', function () {
                 console.log('Successfully bootstraped Vendor CSS');
             });
-            Contoso.init.getDependency('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css', 'css', function () {
+            Contoso.init.getDependency('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css', 'css', function () {
             });
         }
         // rootSiteCollectionPrefix = "/sites";

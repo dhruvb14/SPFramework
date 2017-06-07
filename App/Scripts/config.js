@@ -24,6 +24,7 @@ Contoso.Controllers = [
     "./App/Scripts/Controllers/Example/exampleOwlDemo.ts",
     "./App/Scripts/Controllers/Example/exampleSlideShow.ts",
     "./App/Scripts/Controllers/SiteCreation/siteCreation.ts",
+    "./App/Scripts/Controllers/_Starter/demo.ts",
 
     //Init Code
     "./App/Scripts/Helpers/Contoso/bootstrap.ts"

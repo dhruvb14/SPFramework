@@ -170,7 +170,7 @@ var Controllers;
             viewtemplate = viewtemplate ? viewtemplate : "exampleList";
             var vm = new exampleListVM();
             for (var i = 0; i < 10; i++) {
-                var tmpTitle = "Item number " + i;
+                var tmpTitle = "Item numbers " + i;
                 var item = new exampleListItem(tmpTitle);
                 vm.listItem.push(item);
             }
@@ -551,7 +551,7 @@ var Controllers;
                 "SBU_x0020_Community": Controllers.siteCreation.vm.SelectedTemplate.SBU == true ? "Yes" : "No",
                 "SiteURL": Controllers.siteCreation.vm.SelectedTemplate.URLPrefix + Controllers.siteCreation.vm.SelectedTemplate.URLSuffix,
                 "ContentTypeId": "0x0100B7235E8992FABB469447A05D2C9BE007",
-                "CategoryDescription": $("#sitedescription").text()
+                "CategoryDescription1": $("#sitedescription").text()
             };
             $.ajax({
                 url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('" + listName + "')/items",
@@ -632,6 +632,38 @@ var Controllers;
         return siteCreationController;
     }());
     Controllers.siteCreation = new siteCreationController(Contoso.Helpers);
+})(Controllers || (Controllers = {}));
+
+var Controllers;
+(function (Controllers) {
+    var DemoItem = (function () {
+        function DemoItem(title, message) {
+            this.title = title;
+            this.message = message;
+        }
+        return DemoItem;
+    }());
+    var DemoController = (function () {
+        function DemoController(Helpers) {
+            this.Helpers = Helpers;
+            this.name = "Demo";
+        }
+        DemoController.prototype.load = function () {
+            var self = this;
+            // var uid = $(self.container).attr("id");
+            var vm = new DemoItem("Hello World Title", "Hello World Body");
+            self.render(vm);
+        };
+        DemoController.prototype.render = function (vm) {
+            var controller = "div[data-controller='Demo']";
+            var viewSource = $("#Demo-template").html();
+            var template = Handlebars.compile(viewSource);
+            var html = template(vm);
+            $(controller).html(html);
+        };
+        return DemoController;
+    }());
+    Controllers.Demo = new DemoController(Contoso.Helpers);
 })(Controllers || (Controllers = {}));
 
 /// <reference path="init.ts" />

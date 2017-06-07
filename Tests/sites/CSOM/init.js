@@ -4,7 +4,8 @@ var Contoso;
 (function (Contoso) {
     var initController = (function () {
         function initController() {
-            this.rootSiteCollectionPrefix = "/sites";
+            // rootSiteCollectionPrefix = "/sites";
+            this.rootSiteCollectionPrefix = "/spframework";
             this.dataAttributeTag = "data-controller";
         }
         initController.prototype.getDependency = function (filename, filetype, successCallback) {
@@ -25,6 +26,7 @@ var Contoso;
                 inject.onload = inject.onreadystatechange = function () {
                     if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
                         done = true;
+                        successCallback();
                         inject.onload = inject.onreadystatechange = null;
                         if (filetype == "js") {
                             head.removeChild(inject);
@@ -33,6 +35,7 @@ var Contoso;
                 };
                 head.appendChild(inject);
             }
+            // successCallback();
         };
         initController.prototype.domBuilder = function () {
             if (document.getElementById("handlebarsTemplates") === null) {
@@ -45,26 +48,29 @@ var Contoso;
         initController.prototype.loadJs = function () {
             Contoso.init.getDependency(Contoso.init.rootSiteCollectionPrefix + '/CSOM/vendor.js', 'js', function () {
                 console.log("Successfully boostrapped Vendor JS");
-                Contoso.init.getDependency(Contoso.init.rootSiteCollectionPrefix + '/CSOM/bundle.js', 'js', function () {
-                    if (typeof Controllers === 'undefined' || typeof Contoso.Helpers === 'undefined') {
-                        if (console !== undefined) {
-                            console.log('Failed to bootstrap CSOM JS');
-                        }
+                Contoso.init.loadBundle();
+            });
+        };
+        initController.prototype.loadBundle = function () {
+            Contoso.init.getDependency(Contoso.init.rootSiteCollectionPrefix + '/CSOM/bundle.js', 'js', function () {
+                if (typeof Controllers === 'undefined' || typeof Contoso.Helpers === 'undefined') {
+                    if (console !== undefined) {
+                        console.log('Failed to bootstrap CSOM JS');
                     }
-                    else {
-                        Contoso.Helpers.log('Successfully bootstraped CSOM JS');
-                    }
-                });
+                }
+                else {
+                    Contoso.Helpers.log('Successfully bootstraped CSOM JS');
+                }
             });
         };
         initController.prototype.loadCss = function () {
             Contoso.init.getDependency(Contoso.init.rootSiteCollectionPrefix + '/CSOM/bundle.css', 'css', function () {
-                Contoso.Helpers.log('Successfully bootstraped CSOM CSS');
+                console.log('Successfully bootstraped CSOM CSS');
             });
             Contoso.init.getDependency(Contoso.init.rootSiteCollectionPrefix + '/CSOM/vendor.css', 'css', function () {
-                Contoso.Helpers.log('Successfully bootstraped Vendor CSS');
+                console.log('Successfully bootstraped Vendor CSS');
             });
-            Contoso.init.getDependency('//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css', 'css', function () {
+            Contoso.init.getDependency('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css', 'css', function () {
             });
         };
         return initController;
